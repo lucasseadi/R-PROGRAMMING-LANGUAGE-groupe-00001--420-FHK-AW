@@ -1,0 +1,88 @@
+> # create data frame
+> dataframe=data.frame(student_name=c("Amy","Bob","Chuck","Daisy","Ellie","Frank","George","Helen"),age=c(27,55,34,42,20,27,34,42),gender=c('F','M','M','F','F','M','M','F'),gpa=c(3.26,3.75,2.98,3.4,2.75,3.32,3.68,3.97))
+> dataframe
+  student_name age gender  gpa
+1          Amy  27      F 3.26
+2          Bob  55      M 3.75
+3        Chuck  34      M 2.98
+4        Daisy  42      F 3.40
+5        Ellie  20      F 2.75
+6        Frank  27      M 3.32
+7       George  34      M 3.68
+8        Helen  42      F 3.97
+> # lists variables
+> names(dataframe)
+[1] "student_name" "age"          "gender"       "gpa"         
+> # generate all entries under variable age
+> dataframe$age
+[1] 27 55 34 42 20 27 34 42
+> # generate all entries in the 2nd column which is age
+> dataframe[,2]
+[1] 27 55 34 42 20 27 34 42
+> # generate all entries in the 2nd and 3rd column of data frame
+> dataframe[,2:3]
+  age gender
+1  27      F
+2  55      M
+3  34      M
+4  42      F
+5  20      F
+6  27      M
+7  34      M
+8  42      F
+> # generates the same output as nsc[2:3]
+> dataframe[2:3]
+  age gender
+1  27      F
+2  55      M
+3  34      M
+4  42      F
+5  20      F
+6  27      M
+7  34      M
+8  42      F
+> # generate all data in 2nd row
+> dataframe[2,]
+  student_name age gender  gpa
+2          Bob  55      M 3.75
+> # generate 2nd and 3rd row data on age
+> dataframe[2:3,2]
+[1] 55 34
+> # generate data of 2nd and 3rd row and 2nd and 3rd column
+> dataframe[2:3,2:3]
+  age gender
+2  55      M
+3  34      M
+> # lists variables
+> dataframe
+  student_name age gender  gpa
+1          Amy  27      F 3.26
+2          Bob  55      M 3.75
+3        Chuck  34      M 2.98
+4        Daisy  42      F 3.40
+5        Ellie  20      F 2.75
+6        Frank  27      M 3.32
+7       George  34      M 3.68
+8        Helen  42      F 3.97
+> # list all entries under variable age
+> dataframe$age
+[1] 27 55 34 42 20 27 34 42
+> # list all entries under variable gender
+> dataframe$gender
+[1] "F" "M" "M" "F" "F" "M" "M" "F"
+> # generate a count by age
+> count(dataframe$age)
+Error in count(dataframe$age) : could not find function "count"
+> table(dataframe$age)
+
+20 27 34 42 55 
+ 1  2  2  2  1 
+> # generate a cross-tab count by age and gender
+> table(dataframe$age,dataframe$gender)
+    
+     F M
+  20 1 0
+  27 1 1
+  34 0 2
+  42 2 0
+  55 0 1
